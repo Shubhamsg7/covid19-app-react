@@ -5,9 +5,76 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #263238;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.card{
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  flex-basis: 25%
+}
+
+.card h1{
+  margin: 1px;
+  font-weight: 500;
+}
+.card h3{
+  margin: 1px;
+  font-weight: 300;
+}
+
+.card-confirmed{
+  background-color: rgba(244, 67, 54, .2);
+  color:#F44336;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.card-confirmed:hover{
+  transform: translateY(-5px);
+}
+
+.card-deaths{
+  background-color: rgba(158, 158, 158,.2);
+  color:#9E9E9E;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.card-deaths:hover{
+  transform: translateY(-5px);
+}
+
+.card-recovered{
+  background-color: rgba(76, 175, 80, .2);
+  color: #4CAF50;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.card-recovered:hover{
+  transform: translateY(-5px);
+}
+
+.heading{
+  color: #ddd;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .card{
+    flex-basis: 100%;
+  }
 }
