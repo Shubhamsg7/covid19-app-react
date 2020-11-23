@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NumberFormat from 'react-number-format';
-import India from "./India";
 import Confirm from "./img/Warning.png"
 import Active from "./img/Report.png"
 import Recover from "./img/Stay at Home.png"
@@ -9,7 +8,7 @@ import Death from "./img/Death.png"
 
 
 
-const Details = () => {
+const India = () => {
 
   
   const [TotalConfirmed, setTotalConfirmed] = useState();
@@ -27,19 +26,19 @@ const Details = () => {
               `https://api.covid19api.com/summary`
           );
           console.log(res);
-          setTotalConfirmed(res.data.Global.TotalConfirmed);
-          setTotalDeaths(res.data.Global.TotalDeaths);
-          setTotalRecovered(res.data.Global.TotalRecovered);
-          setNewConfirmed(res.data.Global.NewConfirmed);
-          setNewDeaths(res.data.Global.NewDeaths);
-          setNewRecovered(res.data.Global.NewRecovered);
+          setTotalConfirmed(res.data.Countries[76].TotalConfirmed);
+          setTotalDeaths(res.data.Countries[76].TotalDeaths);
+          setTotalRecovered(res.data.Countries[76].TotalRecovered);
+          setNewConfirmed(res.data.Countries[76].NewConfirmed);
+          setNewDeaths(res.data.Countries[76].NewDeaths);
+          setNewRecovered(res.data.Countries[76].NewRecovered);
       }
       getData();
   });
 
   return (
     <>
-        <h1 className="heading">Covid19 Cases</h1>
+        <h1 className="heading">India Cases</h1>
         
         <div className="container">
         <div className="card card-confirmed">
@@ -86,10 +85,9 @@ const Details = () => {
           <img src={Recover} alt="image" />
         </div>
         </div>
-        <India />
         
     </>
   );
 }
 
-export default Details;
+export default India;
